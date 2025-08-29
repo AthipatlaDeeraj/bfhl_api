@@ -103,7 +103,9 @@ app.get("/", (req, res) => {
   res.json({ message: "My api is working good" });
 });
 
-const PORT=3000;
-app.listen(PORT, () => {
-  console.log(`server running on http://localhost:${PORT}`);
-});
+//const PORT=3000;
+//app.listen(PORT, () => {
+// console.log(`server running on http://localhost:${PORT}`);
+//});
+
+module.exports = app;
