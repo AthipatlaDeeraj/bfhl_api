@@ -4,8 +4,6 @@ This API takes an input array and categorizes its elements into numbers, alphabe
 It also calculates the sum of numeric values and creates a concatenated string from all alphabets in reverse order.
 
 This API is live on **Railway**:  
-https://bfhlapi-production-9824.up.railway.app  -  (https://bfhlapi-production-9824.up.railway.app)
-
 Implemented http requests(get and post requests) -**Used Node.js And Express.js** 
 Tested using postman working absolutely fine 
 
