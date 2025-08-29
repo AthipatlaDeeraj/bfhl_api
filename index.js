@@ -79,17 +79,18 @@ app.post("/bfhl", (req, res) => {
     const categorized = categorizeElements(req.body.data);
 
     const response = {
-      is_success: true,
-      user_id: makeUserId(Myname, DateOfBirth),
-      email: Email,
-      roll_number: ROLL_NUMBER,
-      odd_nums: categorized.odd_nums,
-      even_num: categorized.even_num,
-      alphabets: categorized.alphabets,
-      special_characters: categorized.special_characters,
-      sum: categorized.sum,
-      concat_string: categorized.concat_string,
+        is_success: true,
+        user_id: makeUserId(Myname, DateOfBirth),
+        email: Email,
+        roll_number: ROLL_NUMBER,
+        odd_numbers: categorized.odd_nums,
+        even_numbers: categorized.even_num,
+        alphabets: categorized.alphabets,
+        special_characters: categorized.special_characters,
+        sum: categorized.sum,
+        concat_string: categorized.concat_string,
     };
+
 
     return res.status(200).json(response);
   } catch (err) {
