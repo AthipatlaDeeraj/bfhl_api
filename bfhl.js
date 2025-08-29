@@ -117,11 +117,9 @@ app.post("/", (req, res) => {
   }
 });
 
-// Export for Vercel
-module.exports = serverless(app);
 
 
-//const PORT=3000;
-//app.listen(PORT, () => {
-// console.log(`server running on http://localhost:${PORT}`);
-//});
+const PORT=3000;
+app.listen(PORT, () => {
+ console.log(`server running on http://localhost:${PORT}`);
+});
