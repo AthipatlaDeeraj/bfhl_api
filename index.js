@@ -1,10 +1,8 @@
 const express = require("express");
-const serverless = require("serverless-http");
 
 const app = express();
 app.use(express.json());
 
-// Credentials
 const Myname = "ATHIPATLA DEERAJ KUMAR";
 const DateOfBirth = "07042005";
 const Email = "deeraj.22bce8574@vitapstudent.ac.in";
@@ -28,7 +26,6 @@ function categorizeElements(arr) {
     }
     const s = String(item);
 
-    // Number check
     if (/^[+-]?\d+$/.test(s)) {
       const num = parseInt(s, 10);
       if (num % 2 === 0) even_numbers.push(String(num));
@@ -36,7 +33,6 @@ function categorizeElements(arr) {
       continue;
     }
 
-    // Alphabet check
     if (/^[A-Za-z]+$/.test(s)) {
       alphabets.push(s.toUpperCase());
       for (const ch of s) {
@@ -45,14 +41,12 @@ function categorizeElements(arr) {
       continue;
     }
 
-    // Special character / mixed string
     special_characters.push(s);
     for (const ch of s) {
       if (/[A-Za-z]/.test(ch)) allAlphaCharsInOrder.push(ch);
     }
   }
 
-  // Sum of numbers
   const sumVal = arr
     .map((x) => {
       if (x == null) return null;
@@ -62,7 +56,6 @@ function categorizeElements(arr) {
     .filter((v) => v !== null)
     .reduce((acc, v) => acc + v, 0);
 
-  // Concat string (reverse + alternating caps)
   const reversed = allAlphaCharsInOrder.slice().reverse();
   const concatChars = reversed.map((ch, idx) =>
     idx % 2 === 0 ? ch.toUpperCase() : ch.toLowerCase()
@@ -79,14 +72,11 @@ function categorizeElements(arr) {
   };
 }
 
-// GET route
-// GET /api/bfhl
-app.get("/", (req, res) => {
+app.get("/bfhl", (req, res) => {
   res.json({ message: "My api is working good" });
 });
 
-// POST /api/bfhl
-app.post("/", (req, res) => {
+app.post("/bfhl", (req, res) => {
   try {
     if (!req.body || !Array.isArray(req.body.data)) {
       return res.status(400).json({
@@ -117,9 +107,7 @@ app.post("/", (req, res) => {
   }
 });
 
-
-
-const PORT=3000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
- console.log(`server running on http://localhost:${PORT}`);
+  console.log(`Server running on http://localhost:${PORT}`);
 });
