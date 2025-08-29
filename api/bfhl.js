@@ -80,12 +80,13 @@ function categorizeElements(arr) {
 }
 
 // GET route
+// GET /api/bfhl
 app.get("/", (req, res) => {
   res.json({ message: "My api is working good" });
 });
 
-// POST /bfhl
-app.post("/bfhl", (req, res) => {
+// POST /api/bfhl
+app.post("/", (req, res) => {
   try {
     if (!req.body || !Array.isArray(req.body.data)) {
       return res.status(400).json({
